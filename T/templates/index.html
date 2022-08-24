@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{url_for('static', filename='css/start.css')}}" />
+<html lang="de">
+<head>
+    <title>ASVÖ Verein - SV Forelle Steyr - Tennis</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="Content-Area">
+        <p>Diese Homepage soll das Vereinsleben des "SV Forelle Steyr - Tennis" repräsentieren 
+        und dient in erster Linie als Informationsplattform und Unterhaltung für die Mitglieder unseres Vereins.<br>
+        Vielleicht finden auch Nichtmitglieder Spaß an unserem Treiben und schließen sich der Gemeinschaft an.
+        </p>
+        <p class="Message">Neumitglieder sind jederzeit willkommen!</p>
+        <p class="Contact">Sportverein Forelle Steyr - Tennis<br>
+            Kematmüllerstraße 1a<br>
+            A-4400 Steyr<br>
+            Tel.: +43 681/20654506<br>
+            ZVR 049244579
+        </p>
+    </div>
+    {% include 'nav1.html' %} 
+</body>
+
+
+</html>

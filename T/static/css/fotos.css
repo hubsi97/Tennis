@@ -1,0 +1,18 @@
+#Images{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.image_switch{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index:2;
+    font-size: 20px;
+}
+#Images :nth-child(1){
+   left:4vh;
+}
+#Images :last-child{
+    left:-4vh;
+ }
