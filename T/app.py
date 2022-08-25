@@ -58,6 +58,17 @@ def show_news():
 def show_platz():
     return render_template("platzresavierung.html")
 
+@app.route("/get_json_platz")
+def check():
+    with open("static/platzresavierung.txt","r",encoding='utf-8') as f:
+        lines=f.read()
+    lines=lines.split("Senden")[:-1]
+    #TODO Logic for Platzreasvierung
+    response = {
+        "platz": lines
+    }
+    return response
+
 
 if __name__ == "__main__":
     app.run(debug=True)

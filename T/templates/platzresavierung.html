@@ -1,40 +1,48 @@
 {% include 'nav.html' %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/platz.css')}}" />
 <script src="{{url_for('static', filename='js/calender.js')}}" defer></script>
-<div class="space">
-    <div class="dates">
-        <label>Startzeitpunkt:</label><br>
-        <input id="start_datum" type="datetime-local" name="datum" step="">
-        <br>
-        <label>Endzeitpunkt:</label><br>
-        <input id="end_datum" type="datetime-local" name="datum" step="">
-    </div>
-    <div class="values_platzwahl">
-        <label>Platzwahl:</label>
-        <br><br>
-        <select name="platz_id" id="Dropdown">
-        <option value="Platz 4">Platz 4</option>
-        </select>
-    </div>
-    <div class="values_textarrea">
-        <label>Name:</label>
-        <br>
-        <textarea id="name" rows="3" cols="20"></textarea>
-    </div>
-    <div class="values_email">
-        <label>Email:</label>
-        <br>
-        <input type="email" id="email">
-    </div>
+<script src="{{url_for('static', filename='js/platz.js')}}" defer></script>
+<div class="All-Area" style=" width: 100%;
+height: 54%;
+background: linear-gradient(0deg,rgb(250, 135, 72),rgb(252,171,126));
+display: flex;
+justify-content: center;
+align-items: center;">
+    <div class="space">
+        <div class="dates">
+            <label>Startzeitpunkt:</label><br>
+            <input id="start_datum" type="datetime-local" name="datum" step="">
+            <br>
+            <label>Endzeitpunkt:</label><br>
+            <input id="end_datum" type="datetime-local" name="datum" step="">
+        </div>
+        <div class="values_platzwahl">
+            <label>Platzwahl:</label>
+            <br><br>
+            <select name="platz_id" id="Dropdown">
+            <option value="Platz 4">Platz 4</option>
+            </select>
+        </div>
+        <div class="values_textarrea">
+            <label>Name:</label>
+            <br>
+            <textarea id="name" rows="3" cols="20"></textarea>
+        </div>
+        <div class="values_email">
+            <label>Email:</label>
+            <br>
+            <input type="email" id="email">
+        </div>
 
 
-    <div class="Choosen">
-        <p><strong>Auswahl:</strong></p><br>
-        <p id="platz_auswahl">Platz: </p>
-        <p id="datum_von">Von: </p>
-        <p id="datum_bis">Bis: </p>
-        <p id="name_auswahl">Name: </p>
-        <p id="email_auswahl">Email: </p><br>
-        <button class="Submit">Senden</button>
+        <div class="Choosen">
+            <p><strong>Auswahl:</strong></p><br>
+            <p id="platz_auswahl">Platz: </p>
+            <p id="datum_von">Von: </p>
+            <p id="datum_bis">Bis: </p>
+            <p id="name_auswahl">Name: </p>
+            <p id="email_auswahl">Email: </p><br>
+            <button class="Submit" onclick="checkRes()">Senden</button>
+        </div>
     </div>
-</div>
+</div>  

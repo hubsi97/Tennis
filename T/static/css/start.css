@@ -16,7 +16,6 @@ body{
   background-size: 100% 40%;
   height:100%;
   min-height: 100%;
-  background-color:white;
 }
 
 
@@ -32,7 +31,7 @@ li, a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 13% 0% 2% 0%;
+  padding: 15% 0% 2% 0%;
   list-style: none;
   align-content: center;
 }
@@ -46,23 +45,25 @@ li, a {
 .nav_links li {
   display: inline-block;
   padding: 0px 0px;
+  border-radius:25px;
+  background:linear-gradient(45deg,rgb(0, 207, 162),rgb(0, 255, 255))
 }
 
 .nav_links li a {
-  transition: all 0.8s ease 0s;
+  transition: all 0.5s ease;
   padding-top: 5px;
   font-size: 25px;
   font-weight: 600;
 }
 .nav_links li a:hover {
   color: blue;
-  font-size: 28px;
+  font-size: 22px;
 }
 
 .Content-Area{
   position: absolute;
   border: 2px solid black;
-  height: 45%;
+  height: 40%;
   left: 10%;
   width: 60%;
   display: flex;
@@ -112,8 +113,9 @@ li, a {
   border: 2px solid black;
   padding-left: 15px;
   background-color: rgb(180, 210, 220);
-  height: 45%;
+  height: 40%;
 }
+
 .Link-Area-ul{
   list-style: none;
 }
@@ -125,10 +127,44 @@ li, a {
 }
 .Link-Area-ul li a{
   transition: all 0.3s ease 0s;
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(0, 0, 0);
 }
 .Link-Area-ul li a:hover {
   color: blue;
   font-size: 23px;
+}
+.All-Area{
+  width: 100%;
+  height: 53%;
+  background: linear-gradient(0deg,rgb(250, 135, 72),rgb(252,171,126));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa {
+  padding: 5px;
+  font-size: 30px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25%;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-instagram {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  color: white;
+}
+.icons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  padding-left: 2.5%;
+  height: 100%;
 }
