@@ -77,7 +77,7 @@ function functionalities(){
 
 
 
-    platz_auswahl.innerText="Platz: 1"
+    platz_auswahl.innerText="Platz: 4"
     dropdown.addEventListener("change", function() {
         platz_auswahl.innerText=""
         platz_auswahl.innerText=dropdown.value.split(" ")[0]+": "+dropdown.value.split(" ")[1];
