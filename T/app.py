@@ -103,7 +103,7 @@ def check():
             rep = False
             break
         i += 1
-
+    #test psuh
     if rep:
         last_week = datetime.now() - timedelta(days=30)
         entries = list(filter(lambda x: x[0] >= last_week, entries))
