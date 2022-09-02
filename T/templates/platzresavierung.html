@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/platz.css')}}" />
 <script src="{{url_for('static', filename='js/calender.js')}}" defer></script>
 <script src="{{url_for('static', filename='js/platz.js')}}" defer></script>
+<script src="{{url_for('static', filename='js/jquery-3.6.1.min.js')}}"></script>
 <div class="All-Area" style=" width: 100%;
 height: 54%;
 background: linear-gradient(0deg,rgb(250, 135, 72),rgb(252,171,126));
@@ -42,7 +43,7 @@ align-items: center;">
             <p id="datum_bis">Bis: </p>
             <p id="name_auswahl">Name: </p>
             <p id="email_auswahl">Email: </p><br>
-            <button class="Submit" onclick="checkRes()">Senden</button>
+            <button class="Submit" onclick="sentData()">Senden</button>
         </div>
     </div>
 </div>  

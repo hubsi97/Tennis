@@ -88,7 +88,7 @@ function functionalities(){
     });
     email.addEventListener("change", function() {
         email_auswahl.innerText=""
-        email_auswahl.innerText="Name: "+email.value;
+        email_auswahl.innerText="Email: "+email.value;
     });
     start_datum.addEventListener("change", function() {
         datum_von.innerText=""
