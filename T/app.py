@@ -77,34 +77,60 @@ def check():
 
     with open("static/platzresavierung.txt", "r", encoding='utf-8') as f:
         lines = f.read()
-    lines = lines.split("Senden\n")
-    sent = sent.split("Senden\n")[0]
-    for line in lines[:-1] + [sent]:
+
+    lines = [x for x in lines.split("Senden\n") if len(x)>0]
+    if len(lines)==0:
+        lines=[sent]
+    else:
+        lines=lines+[sent]
+
+    for line in lines:
         data = line.split("\n\n")[2:7]
-        start = datetime.strptime(data[1].split(": ")[1], "%Y-%m-%d %H:%M")
-        end = datetime.strptime(data[2].split(": ")[1], "%Y-%m-%d %H:%M")
+        try:
+            start = datetime.strptime(data[1].split(": ")[1], "%Y-%m-%d %H:%M")
+            end = datetime.strptime(data[2].split(": ")[1], "%Y-%m-%d %H:%M")
+        except IndexError as e:
+            response = {
+                "platz": 304
+            }
+            return response
+
         if start > end:
             response = {
-                "platz": False
+                "platz": 301
+            }
+            return response
+
+
+        if len(data[3].split(": ")) == 1:
+            response = {
+                "platz": 302
+            }
+            return response
+
+        if len(data[4].split(": "))==1 or '@' not in data[4].split(": ")[1]:
+            response = {
+                "platz": 303
             }
             return response
 
         platz = data[0].split("\n")[1]
         name = data[3].split(": ")[1]
         email = data[4].split(": ")[1]
+
         entries.append((start, end, platz, name, email))
 
     entries.sort(key=lambda x: x[0])
 
-    rep = True
+    rep = 200
     i = 1
     for entry in entries[:-1]:
         if entry[0] < entries[i][1] and entries[i][0] < entry[1]:
-            rep = False
+            rep = 300
             break
         i += 1
     #test psuh
-    if rep:
+    if rep==200:
         last_week = datetime.now() - timedelta(days=30)
         entries = list(filter(lambda x: x[0] >= last_week, entries))
         with open("static/platzresavierung.txt", "w", encoding='utf-8') as f:
@@ -112,7 +138,7 @@ def check():
                 f.write(
                     f"Auswahl:\n\n\n\n\n{entry[2]}\n\nVon: {entry[0].year}-{str(entry[0].month).zfill(2)}-{str(entry[0].day).zfill(2)} {str(entry[0].hour).zfill(2)}:{str(entry[0].minute).zfill(2)}\n\n"
                     f"Bis: {entry[1].year}-{str(entry[1].month).zfill(2)}-{str(entry[1].day).zfill(2)} {str(entry[1].hour).zfill(2)}:{str(entry[1].minute).zfill(2)}"
-                    f"\n\nName: {entry[3]}\n\nEmail: {entry[4]}\n\n\n\n")
+                    f"\n\nName: {entry[3]}\n\nEmail: {entry[4]}\n\n\n\nSenden\n")
     response = {
         "platz": rep
     }

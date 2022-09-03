@@ -77,3 +77,39 @@ body {
 #start_datum , #end_datum, #Dropdown, #email, #name{
     font-size: 24;
 }
+#pop-up{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    display: none;
+    z-index: 5;
+    left: 35vw;
+    top: 53vh;
+    font-size: 25;
+    background-color: white;
+    border-radius: 30%;
+}
+#inner-pop-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    padding: 20px;
+}
+@keyframes pop-out {
+    from,to {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+}
+@-webkit-keyframes pop-out{
+    from,to {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+}
